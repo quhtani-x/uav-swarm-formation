@@ -2,7 +2,7 @@ import math
 import random
 import sys
 import pygame
-
+# DISCLAIMER most of the comments has been added by an Ai , as my code didnt have much comments 
 # UAV SWARM simulation.
 # a swarm of drones flies together using "boids" rules (separation, alignment,
 # cohesion) plus collision avoidance
