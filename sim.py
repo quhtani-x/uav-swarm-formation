@@ -5,10 +5,7 @@ import pygame
 
 # UAV SWARM simulation.
 # a swarm of drones flies together using "boids" rules (separation, alignment,
-# cohesion) plus collision avoidance, and follows a moving leader / target.
-# this is how real drone light-shows and search swarms coordinate without a
-# central computer - every drone just looks at its neighbors. click to move
-# the target the swarm flies toward.
+# cohesion) plus collision avoidance
 
 W, H = 960, 640
 pygame.init()
@@ -19,8 +16,8 @@ clock = pygame.time.Clock()
 
 NUM = 40
 MAX_SPEED = 4.0
-NEIGHBOR = 70      # how far a drone can "see" its neighbors
-SEP_DIST = 28      # personal space, get this close and push apart
+NEIGHBOR = 70      #basically  how far a drone can see its neighbors
+SEP_DIST = 28      # this is like personal space get this close and push apart
 
 
 class Drone:
@@ -105,7 +102,7 @@ while running:
     # draw the target
     pygame.draw.circle(screen, (255, 170, 60), (int(target[0]), int(target[1])), 8, 2)
 
-    # draw each drone as a little arrow pointing where it flies
+    # draw all  drone as a little arrow pointing where it flies
     for d in swarm:
         ang = math.atan2(d.vy, d.vx)
         tip = (d.x + 10 * math.cos(ang), d.y + 10 * math.sin(ang))
